@@ -32,6 +32,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LB_Titulo = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.BTN_Cancelar = new System.Windows.Forms.Button();
             this.BTN_Guardar = new System.Windows.Forms.Button();
             this.PB_Female = new System.Windows.Forms.PictureBox();
@@ -52,7 +53,6 @@
             this.TB_Telefono = new System.Windows.Forms.TextBox();
             this.TB_Edad = new System.Windows.Forms.TextBox();
             this.TB_Estatura = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -100,19 +100,28 @@
             this.MainPanel.Controls.Add(this.LB_Titulo);
             this.MainPanel.Controls.Add(this.LB_Edad);
             this.MainPanel.Controls.Add(this.LB_Apellido);
-            this.MainPanel.Controls.Add(this.LB_Estatura);
             this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Controls.Add(this.TB_Nombre);
             this.MainPanel.Controls.Add(this.TB_Apellido);
+            this.MainPanel.Controls.Add(this.TB_Edad);
             this.MainPanel.Controls.Add(this.LB_Telefono);
             this.MainPanel.Controls.Add(this.TB_Telefono);
-            this.MainPanel.Controls.Add(this.TB_Edad);
+            this.MainPanel.Controls.Add(this.LB_Estatura);
             this.MainPanel.Controls.Add(this.TB_Estatura);
             this.MainPanel.Location = new System.Drawing.Point(53, 70);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(633, 761);
             this.MainPanel.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(301, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 16);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Prueba commits";
             // 
             // BTN_Cancelar
             // 
@@ -350,20 +359,12 @@
             this.TB_Estatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TB_Estatura.Location = new System.Drawing.Point(73, 496);
             this.TB_Estatura.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_Estatura.MaxLength = 3;
             this.TB_Estatura.Name = "TB_Estatura";
             this.TB_Estatura.Size = new System.Drawing.Size(467, 15);
             this.TB_Estatura.TabIndex = 6;
             this.TB_Estatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Estatura_KeyPress);
             this.TB_Estatura.Leave += new System.EventHandler(this.TB_Estatura_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Prueba commits";
             // 
             // Form1
             // 

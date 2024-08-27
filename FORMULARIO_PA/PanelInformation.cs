@@ -12,7 +12,7 @@ namespace FORMULARIO_PA
 {
     public partial class PanelInformation : Form
     {
-        public PanelInformation(string Nombre, string Apellido, int Telefono, int Edad, int Estatura, bool Genero)
+        public PanelInformation(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, bool Genero)
         {
             InitializeComponent();
 

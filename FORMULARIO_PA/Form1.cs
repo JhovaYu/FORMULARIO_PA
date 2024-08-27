@@ -17,9 +17,9 @@ namespace FORMULARIO_PA
     public partial class Form1 : Form
     {
 
-        String Nombre, Apellido;
+        String Nombre, Apellido, Telefono;
 
-        int Telefono, Edad, Estatura;
+        int  Edad, Estatura;
 
         Boolean Cancel = false, Genero;
 
@@ -110,17 +110,21 @@ namespace FORMULARIO_PA
             Apellido = TB_Apellido.Text;
         }
 
-        private void TB_Telefono_Leave(object sender, EventArgs e)
-        {
-            if (TB_Telefono.Text == "")
+            private void TB_Telefono_Leave(object sender, EventArgs e)
             {
-                Funciones.AjustarLabelFormUp(LB_Telefono, new Point(51, 267));
-            }
-            if (TB_Telefono.Text != "") 
-            { 
-                Telefono = int.Parse(TB_Telefono.Text);
-            }
+                if (TB_Telefono.Text == "")
+                {
+                    Funciones.AjustarLabelFormUp(LB_Telefono, new Point(51, 267));
+                }
+
             
+                
+                {
+                    Telefono = (TB_Telefono.Text);
+                }
+                
+           
+
         }
 
         private void TB_Edad_Leave(object sender, EventArgs e)
@@ -129,7 +133,7 @@ namespace FORMULARIO_PA
             {
                 Funciones.AjustarLabelFormUp(LB_Edad, new Point(51, 327));
             }
-            if (TB_Telefono.Text != "")
+            if (TB_Edad.Text != "")
             {
                 Edad = int.Parse(TB_Edad.Text);
             }
@@ -141,7 +145,7 @@ namespace FORMULARIO_PA
             {
                 Funciones.AjustarLabelFormUp(LB_Estatura, new Point(51, 396));
             }
-            if (TB_Telefono.Text != "")
+            if (TB_Estatura.Text != "")
             {
                 Estatura = int.Parse(TB_Estatura.Text);
             }
