@@ -250,9 +250,9 @@
             this.LB_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Apellido.Name = "LB_Apellido";
             this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Apellido.Size = new System.Drawing.Size(484, 32);
+            this.LB_Apellido.Size = new System.Drawing.Size(624, 40);
             this.LB_Apellido.TabIndex = 2;
-            this.LB_Apellido.Text = "Apellido";
+            this.LB_Apellido.Text = "Apellidos";
             this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
             // 
             // LB_Name
@@ -338,9 +338,9 @@
             this.LB_Estatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Estatura.Name = "LB_Estatura";
             this.LB_Estatura.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Estatura.Size = new System.Drawing.Size(484, 32);
+            this.LB_Estatura.Size = new System.Drawing.Size(699, 40);
             this.LB_Estatura.TabIndex = 5;
-            this.LB_Estatura.Text = "Estatura";
+            this.LB_Estatura.Text = "Estatura (cm)";
             this.LB_Estatura.Click += new System.EventHandler(this.LB_Estatura_Click);
             // 
             // TB_Estatura

@@ -18,11 +18,11 @@ namespace FORMULARIO_PA
     {
         private PanelInformation PI;
 
-        String Nombre, Apellido, Telefono;
+        public String Nombre, Apellido, Telefono;
 
-        int  Edad, Estatura;
+        public int  Edad, Estatura;
 
-        Boolean isClose, Genero;
+        public Boolean isClose, Genero;
 
         private bool _actualizandoTexto = false;
 
@@ -246,6 +246,14 @@ namespace FORMULARIO_PA
             Funciones.AjustarLabelFormUp(LB_Edad, new Point(51, 327));
             Funciones.AjustarLabelFormUp(LB_Estatura, new Point(51, 396));
         }
+
+        /*public void AlmacenarConvertirToString()
+        {
+            String nombre = Nombre;
+            String apellido = Apellido;
+            String telefono = Telefono;
+            String edad = Edad;
+        }*/
 
     }
 

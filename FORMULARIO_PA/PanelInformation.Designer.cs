@@ -133,6 +133,7 @@
             this.btn_Guardar_InfoPanel.TabIndex = 8;
             this.btn_Guardar_InfoPanel.Text = "Guardar";
             this.btn_Guardar_InfoPanel.UseVisualStyleBackColor = false;
+            this.btn_Guardar_InfoPanel.Click += new System.EventHandler(this.btn_Guardar_InfoPanel_Click);
             // 
             // btn_Ok_InfoPanel
             // 

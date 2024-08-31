@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,8 +22,8 @@ namespace FORMULARIO_PA
             F1 = form1;
         }
 
-        
-       
+
+
 
         public void AgregarInfo(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, bool Genero)
         {
@@ -43,9 +44,58 @@ namespace FORMULARIO_PA
 
         private void btn_Ok_InfoPanel_Click_1(object sender, EventArgs e)
         {
-            
+
             F1.BTN_Cancelar_Click(sender, e);
             this.Close();
+        }
+
+        private void btn_Guardar_InfoPanel_Click(object sender, EventArgs e)
+        {
+            String Nombre = F1.Nombre;
+            String Apellido = F1.Apellido;
+            String Telefono = F1.Telefono;
+            int Edad = F1.Edad;
+            int Estatura = F1.Estatura;
+            bool Genero = F1.Genero;
+            String genero = "";
+            if (Genero)
+            {
+                genero = "Hombre";
+            }
+            else
+            {
+                genero = "Mujer";
+            }
+
+            GuardarArhivos(Nombre, Apellido, Telefono, Edad, Estatura, genero);
+        }
+
+        public void GuardarArhivos(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, string Genero)
+        {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
+            saveFileDialog.Title = "Guardar valores en archivo de texto";
+            saveFileDialog.FileName = "valores.txt";
+
+            // Mostrar el cuadro de diálogo y verificar si el usuario seleccionó una ruta
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                // Obtener la ruta seleccionada por el usuario
+                string rutaArchivo = saveFileDialog.FileName;
+
+
+                using (StreamWriter escritor = new StreamWriter(rutaArchivo))
+                {
+                    escritor.WriteLine("Nombre: " + Nombre);
+                    escritor.WriteLine("Apellido: " + Apellido);
+                    escritor.WriteLine("Teléfono: " + Telefono);
+                    escritor.WriteLine("Edad: " + Edad);
+                    escritor.WriteLine("Estatura: " + Estatura);
+                    escritor.WriteLine("Genero: " + Genero);
+                }
+            }
+
+
         }
     }
 }
