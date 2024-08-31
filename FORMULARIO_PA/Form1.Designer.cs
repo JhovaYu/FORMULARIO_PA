@@ -32,7 +32,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LB_Titulo = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.BTN_Cancelar = new System.Windows.Forms.Button();
             this.BTN_Guardar = new System.Windows.Forms.Button();
             this.PB_Female = new System.Windows.Forms.PictureBox();
@@ -45,13 +44,13 @@
             this.PanelLine_Nombre = new System.Windows.Forms.Panel();
             this.LB_Edad = new System.Windows.Forms.Label();
             this.LB_Apellido = new System.Windows.Forms.Label();
-            this.LB_Estatura = new System.Windows.Forms.Label();
             this.LB_Name = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
             this.TB_Apellido = new System.Windows.Forms.TextBox();
+            this.TB_Edad = new System.Windows.Forms.TextBox();
             this.LB_Telefono = new System.Windows.Forms.Label();
             this.TB_Telefono = new System.Windows.Forms.TextBox();
-            this.TB_Edad = new System.Windows.Forms.TextBox();
+            this.LB_Estatura = new System.Windows.Forms.Label();
             this.TB_Estatura = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
@@ -85,7 +84,6 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.White;
-            this.MainPanel.Controls.Add(this.label1);
             this.MainPanel.Controls.Add(this.BTN_Cancelar);
             this.MainPanel.Controls.Add(this.BTN_Guardar);
             this.MainPanel.Controls.Add(this.PB_Female);
@@ -114,15 +112,6 @@
             this.MainPanel.Size = new System.Drawing.Size(633, 761);
             this.MainPanel.TabIndex = 2;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(301, 111);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 16);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Prueba commits";
-            // 
             // BTN_Cancelar
             // 
             this.BTN_Cancelar.BackColor = System.Drawing.Color.Crimson;
@@ -147,7 +136,7 @@
             this.BTN_Guardar.Name = "BTN_Guardar";
             this.BTN_Guardar.Size = new System.Drawing.Size(140, 44);
             this.BTN_Guardar.TabIndex = 7;
-            this.BTN_Guardar.Text = "Guardar";
+            this.BTN_Guardar.Text = "Aceptar";
             this.BTN_Guardar.UseVisualStyleBackColor = false;
             this.BTN_Guardar.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -266,20 +255,6 @@
             this.LB_Apellido.Text = "Apellido";
             this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
             // 
-            // LB_Estatura
-            // 
-            this.LB_Estatura.AutoSize = true;
-            this.LB_Estatura.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Estatura.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Estatura.Location = new System.Drawing.Point(68, 487);
-            this.LB_Estatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Estatura.Name = "LB_Estatura";
-            this.LB_Estatura.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Estatura.Size = new System.Drawing.Size(484, 32);
-            this.LB_Estatura.TabIndex = 5;
-            this.LB_Estatura.Text = "Estatura";
-            this.LB_Estatura.Click += new System.EventHandler(this.LB_Estatura_Click);
-            // 
             // LB_Name
             // 
             this.LB_Name.AutoSize = true;
@@ -316,6 +291,18 @@
             this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
             this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
             // 
+            // TB_Edad
+            // 
+            this.TB_Edad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Edad.Location = new System.Drawing.Point(73, 423);
+            this.TB_Edad.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_Edad.MaxLength = 2;
+            this.TB_Edad.Name = "TB_Edad";
+            this.TB_Edad.Size = new System.Drawing.Size(467, 15);
+            this.TB_Edad.TabIndex = 5;
+            this.TB_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Edad_KeyPress);
+            this.TB_Edad.Leave += new System.EventHandler(this.TB_Edad_Leave);
+            // 
             // LB_Telefono
             // 
             this.LB_Telefono.AutoSize = true;
@@ -342,17 +329,19 @@
             this.TB_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Telefono_KeyPress);
             this.TB_Telefono.Leave += new System.EventHandler(this.TB_Telefono_Leave);
             // 
-            // TB_Edad
+            // LB_Estatura
             // 
-            this.TB_Edad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Edad.Location = new System.Drawing.Point(73, 423);
-            this.TB_Edad.Margin = new System.Windows.Forms.Padding(4);
-            this.TB_Edad.MaxLength = 2;
-            this.TB_Edad.Name = "TB_Edad";
-            this.TB_Edad.Size = new System.Drawing.Size(467, 15);
-            this.TB_Edad.TabIndex = 5;
-            this.TB_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Edad_KeyPress);
-            this.TB_Edad.Leave += new System.EventHandler(this.TB_Edad_Leave);
+            this.LB_Estatura.AutoSize = true;
+            this.LB_Estatura.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Estatura.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Estatura.Location = new System.Drawing.Point(68, 487);
+            this.LB_Estatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Estatura.Name = "LB_Estatura";
+            this.LB_Estatura.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
+            this.LB_Estatura.Size = new System.Drawing.Size(484, 32);
+            this.LB_Estatura.TabIndex = 5;
+            this.LB_Estatura.Text = "Estatura";
+            this.LB_Estatura.Click += new System.EventHandler(this.LB_Estatura_Click);
             // 
             // TB_Estatura
             // 
@@ -413,7 +402,6 @@
         private System.Windows.Forms.PictureBox PB_Male;
         private System.Windows.Forms.Button BTN_Guardar;
         private System.Windows.Forms.Button BTN_Cancelar;
-        private System.Windows.Forms.Label label1;
     }
 }
 

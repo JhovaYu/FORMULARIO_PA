@@ -28,7 +28,15 @@ namespace FORMULARIO_PA
                 }
             }
 
-        
+        public static void LimpiarPaneles(TextBox Nombre, TextBox Apellido, TextBox Telefono, TextBox Edad, TextBox Estatura)
+        {
+            Nombre.Clear();
+            Apellido.Clear();
+            Telefono.Clear();
+            Edad.Clear();
+            Estatura.Clear();
+        }
+
     }
 
     

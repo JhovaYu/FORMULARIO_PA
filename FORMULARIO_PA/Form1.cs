@@ -16,12 +16,13 @@ namespace FORMULARIO_PA
 {
     public partial class Form1 : Form
     {
+        private PanelInformation PI;
 
         String Nombre, Apellido, Telefono;
 
         int  Edad, Estatura;
 
-        Boolean Cancel = false, Genero;
+        Boolean isClose, Genero;
 
         private bool _actualizandoTexto = false;
 
@@ -45,7 +46,17 @@ namespace FORMULARIO_PA
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-           
+
+            PI = new PanelInformation();
+            
+
+        }
+
+        private void PanelInformation_ValorChanged(object sender, EventArgs e)
+        {
+            PI.btn_Ok_InfoPanel_Click(sender, e, isClose);
+
+            Funciones.LimpiarPaneles(TB_Nombre, TB_Apellido, TB_Telefono, TB_Edad, TB_Estatura);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -62,7 +73,7 @@ namespace FORMULARIO_PA
 
         private void button1_Click(object sender, EventArgs e)
         {
-            PanelInformation PI = new PanelInformation(Nombre, Apellido, Telefono, Edad, Estatura, Genero);
+            PI.AgregarInfo(Nombre, Apellido, Telefono, Edad, Estatura, Genero);
             PI.Show();
         }
 
@@ -153,15 +164,14 @@ namespace FORMULARIO_PA
 
         private void BTN_Cancelar_Click(object sender, EventArgs e)
         {
-            TB_Nombre.Clear();
-            TB_Apellido.Clear();
-            TB_Telefono.Clear();
-            TB_Edad.Clear();
-            TB_Estatura.Clear();
+            
+            
+            Funciones.LimpiarPaneles(TB_Nombre, TB_Apellido, TB_Telefono, TB_Edad, TB_Estatura);
+            
 
             ReordenarFormulario();
 
-            Cancel = true;
+           
         }
 
         private void PB_Male_Click(object sender, EventArgs e)
