@@ -77,10 +77,10 @@ namespace FORMULARIO_PA
             saveFileDialog.Title = "Guardar valores en archivo de texto";
             saveFileDialog.FileName = "valores.txt";
 
-            // Mostrar el cuadro de diálogo y verificar si el usuario seleccionó una ruta
+            
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
-                // Obtener la ruta seleccionada por el usuario
+                
                 string rutaArchivo = saveFileDialog.FileName;
 
 

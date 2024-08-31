@@ -34,12 +34,12 @@ namespace FORMULARIO_PA
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
             (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
+            int nLeftRect,     
+            int nTopRect,      
+            int nRightRect,    
+            int nBottomRect,   
+            int nWidthEllipse, 
+            int nHeightEllipse 
         );
         public Form1()
         {
@@ -109,7 +109,7 @@ namespace FORMULARIO_PA
             }
 
             Nombre = TB_Nombre.Text;
-            //Cancel = false;
+            
         }
 
         private void TB_Apellido_Leave(object sender, EventArgs e)
@@ -127,14 +127,10 @@ namespace FORMULARIO_PA
                 {
                     Funciones.AjustarLabelFormUp(LB_Telefono, new Point(51, 267));
                 }
-
-            
                 
                 {
                     Telefono = (TB_Telefono.Text);
                 }
-                
-           
 
         }
 
@@ -246,15 +242,6 @@ namespace FORMULARIO_PA
             Funciones.AjustarLabelFormUp(LB_Edad, new Point(51, 327));
             Funciones.AjustarLabelFormUp(LB_Estatura, new Point(51, 396));
         }
-
-        /*public void AlmacenarConvertirToString()
-        {
-            String nombre = Nombre;
-            String apellido = Apellido;
-            String telefono = Telefono;
-            String edad = Edad;
-        }*/
-
     }
 
 }
