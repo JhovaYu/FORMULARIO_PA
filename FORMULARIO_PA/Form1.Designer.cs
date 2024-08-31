@@ -52,6 +52,8 @@
             this.TB_Telefono = new System.Windows.Forms.TextBox();
             this.LB_Estatura = new System.Windows.Forms.Label();
             this.TB_Estatura = new System.Windows.Forms.TextBox();
+            this.LB_Hombre = new System.Windows.Forms.Label();
+            this.LB_Mujer = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -84,6 +86,8 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.LB_Mujer);
+            this.MainPanel.Controls.Add(this.LB_Hombre);
             this.MainPanel.Controls.Add(this.BTN_Cancelar);
             this.MainPanel.Controls.Add(this.BTN_Guardar);
             this.MainPanel.Controls.Add(this.PB_Female);
@@ -144,7 +148,7 @@
             // 
             this.PB_Female.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PB_Female.Image = ((System.Drawing.Image)(resources.GetObject("PB_Female.Image")));
-            this.PB_Female.Location = new System.Drawing.Point(405, 565);
+            this.PB_Female.Location = new System.Drawing.Point(404, 580);
             this.PB_Female.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Female.Name = "PB_Female";
             this.PB_Female.Size = new System.Drawing.Size(51, 46);
@@ -159,7 +163,7 @@
             // 
             this.PB_Male.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Male.Image = ((System.Drawing.Image)(resources.GetObject("PB_Male.Image")));
-            this.PB_Male.Location = new System.Drawing.Point(301, 565);
+            this.PB_Male.Location = new System.Drawing.Point(297, 580);
             this.PB_Male.Margin = new System.Windows.Forms.Padding(4);
             this.PB_Male.Name = "PB_Male";
             this.PB_Male.Size = new System.Drawing.Size(46, 46);
@@ -250,7 +254,7 @@
             this.LB_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Apellido.Name = "LB_Apellido";
             this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Apellido.Size = new System.Drawing.Size(624, 40);
+            this.LB_Apellido.Size = new System.Drawing.Size(499, 32);
             this.LB_Apellido.TabIndex = 2;
             this.LB_Apellido.Text = "Apellidos";
             this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
@@ -275,7 +279,7 @@
             this.TB_Nombre.Location = new System.Drawing.Point(73, 185);
             this.TB_Nombre.Margin = new System.Windows.Forms.Padding(4);
             this.TB_Nombre.Name = "TB_Nombre";
-            this.TB_Nombre.Size = new System.Drawing.Size(467, 15);
+            this.TB_Nombre.Size = new System.Drawing.Size(1141, 15);
             this.TB_Nombre.TabIndex = 2;
             this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
             this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
@@ -338,7 +342,7 @@
             this.LB_Estatura.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LB_Estatura.Name = "LB_Estatura";
             this.LB_Estatura.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Estatura.Size = new System.Drawing.Size(699, 40);
+            this.LB_Estatura.Size = new System.Drawing.Size(559, 32);
             this.LB_Estatura.TabIndex = 5;
             this.LB_Estatura.Text = "Estatura (cm)";
             this.LB_Estatura.Click += new System.EventHandler(this.LB_Estatura_Click);
@@ -354,6 +358,30 @@
             this.TB_Estatura.TabIndex = 6;
             this.TB_Estatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Estatura_KeyPress);
             this.TB_Estatura.Leave += new System.EventHandler(this.TB_Estatura_Leave);
+            // 
+            // LB_Hombre
+            // 
+            this.LB_Hombre.AutoSize = true;
+            this.LB_Hombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Hombre.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Hombre.Location = new System.Drawing.Point(283, 544);
+            this.LB_Hombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Hombre.Name = "LB_Hombre";
+            this.LB_Hombre.Size = new System.Drawing.Size(76, 23);
+            this.LB_Hombre.TabIndex = 21;
+            this.LB_Hombre.Text = "Hombre";
+            // 
+            // LB_Mujer
+            // 
+            this.LB_Mujer.AutoSize = true;
+            this.LB_Mujer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Mujer.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Mujer.Location = new System.Drawing.Point(400, 544);
+            this.LB_Mujer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Mujer.Name = "LB_Mujer";
+            this.LB_Mujer.Size = new System.Drawing.Size(65, 23);
+            this.LB_Mujer.TabIndex = 22;
+            this.LB_Mujer.Text = "Mujer";
             // 
             // Form1
             // 
@@ -402,6 +430,8 @@
         private System.Windows.Forms.PictureBox PB_Male;
         private System.Windows.Forms.Button BTN_Guardar;
         private System.Windows.Forms.Button BTN_Cancelar;
+        private System.Windows.Forms.Label LB_Mujer;
+        private System.Windows.Forms.Label LB_Hombre;
     }
 }
 

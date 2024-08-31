@@ -46,7 +46,7 @@ namespace FORMULARIO_PA
         {
 
             F1.BTN_Cancelar_Click(sender, e);
-            this.Close();
+            this.Hide();
         }
 
         private void btn_Guardar_InfoPanel_Click(object sender, EventArgs e)
