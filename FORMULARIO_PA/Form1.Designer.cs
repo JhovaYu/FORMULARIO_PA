@@ -100,16 +100,16 @@
             this.MainPanel.Controls.Add(this.PanelLine_Nombre);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.LB_Titulo);
-            this.MainPanel.Controls.Add(this.LB_Edad);
             this.MainPanel.Controls.Add(this.LB_Apellido);
             this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Controls.Add(this.TB_Nombre);
             this.MainPanel.Controls.Add(this.TB_Apellido);
-            this.MainPanel.Controls.Add(this.TB_Edad);
             this.MainPanel.Controls.Add(this.LB_Telefono);
             this.MainPanel.Controls.Add(this.TB_Telefono);
             this.MainPanel.Controls.Add(this.LB_Estatura);
             this.MainPanel.Controls.Add(this.TB_Estatura);
+            this.MainPanel.Controls.Add(this.LB_Edad);
+            this.MainPanel.Controls.Add(this.TB_Edad);
             this.MainPanel.Location = new System.Drawing.Point(53, 70);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainPanel.Name = "MainPanel";
