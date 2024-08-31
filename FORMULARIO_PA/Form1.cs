@@ -148,7 +148,7 @@ namespace FORMULARIO_PA
 
         private void TB_Estatura_Leave(object sender, EventArgs e)
         {
-            if (TB_Estatura.Text == "" | MainPanel.Focus() == true)
+            if (TB_Estatura.Text == "")
             {
                 Funciones.AjustarLabelFormUp(LB_Estatura, new Point(51, 396));
             }
