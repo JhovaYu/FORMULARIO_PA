@@ -13,21 +13,16 @@ namespace FORMULARIO_PA
     public partial class PanelInformation : Form
     {
 
-        
-        public PanelInformation()
+        private Form1 F1;
+        public PanelInformation(Form1 form1)
         {
             InitializeComponent();
+
+            F1 = form1;
         }
 
-        public void btn_Ok_InfoPanel_Click(object sender, EventArgs e, bool isClose)
-        {
-            isClose = !isClose;
-        }
-
-        private void PanelInformation_MouseHover(object sender, EventArgs e)
-        {
-
-        }
+        
+       
 
         public void AgregarInfo(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, bool Genero)
         {
@@ -44,6 +39,13 @@ namespace FORMULARIO_PA
             {
                 LB_GeneroPI.Text = "Genero: Mujer";
             }
+        }
+
+        private void btn_Ok_InfoPanel_Click_1(object sender, EventArgs e)
+        {
+            
+            F1.BTN_Cancelar_Click(sender, e);
+            this.Close();
         }
     }
 }

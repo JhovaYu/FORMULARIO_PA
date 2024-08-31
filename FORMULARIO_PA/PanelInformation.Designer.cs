@@ -145,6 +145,7 @@
             this.btn_Ok_InfoPanel.TabIndex = 9;
             this.btn_Ok_InfoPanel.Text = "Ok";
             this.btn_Ok_InfoPanel.UseVisualStyleBackColor = false;
+            this.btn_Ok_InfoPanel.Click += new System.EventHandler(this.btn_Ok_InfoPanel_Click_1);
             // 
             // PanelInformation
             // 
@@ -166,7 +167,6 @@
             this.Name = "PanelInformation";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PanelInformation";
-            this.MouseHover += new System.EventHandler(this.PanelInformation_MouseHover);
             this.ResumeLayout(false);
             this.PerformLayout();
 

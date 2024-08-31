@@ -47,14 +47,14 @@ namespace FORMULARIO_PA
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-            PI = new PanelInformation();
+            PI = new PanelInformation(this);
             
 
         }
 
         private void PanelInformation_ValorChanged(object sender, EventArgs e)
         {
-            PI.btn_Ok_InfoPanel_Click(sender, e, isClose);
+            
 
             Funciones.LimpiarPaneles(TB_Nombre, TB_Apellido, TB_Telefono, TB_Edad, TB_Estatura);
         }
@@ -162,16 +162,12 @@ namespace FORMULARIO_PA
             }
         }
 
-        private void BTN_Cancelar_Click(object sender, EventArgs e)
+        public void BTN_Cancelar_Click(object sender, EventArgs e)
         {
-            
-            
+    
             Funciones.LimpiarPaneles(TB_Nombre, TB_Apellido, TB_Telefono, TB_Edad, TB_Estatura);
-            
-
+ 
             ReordenarFormulario();
-
-           
         }
 
         private void PB_Male_Click(object sender, EventArgs e)
