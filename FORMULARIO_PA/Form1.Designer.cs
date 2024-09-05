@@ -32,6 +32,13 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.LB_Titulo = new System.Windows.Forms.Label();
             this.MainPanel = new System.Windows.Forms.Panel();
+            this.LB_AdvertenciaEstatura = new System.Windows.Forms.Label();
+            this.LB_AdvertenciaEdad = new System.Windows.Forms.Label();
+            this.LB_AdvertenciaTelefono = new System.Windows.Forms.Label();
+            this.LB_AdvertenciaApellido = new System.Windows.Forms.Label();
+            this.LB_AdvertenciaNombre = new System.Windows.Forms.Label();
+            this.LB_Mujer = new System.Windows.Forms.Label();
+            this.LB_Hombre = new System.Windows.Forms.Label();
             this.BTN_Cancelar = new System.Windows.Forms.Button();
             this.BTN_Guardar = new System.Windows.Forms.Button();
             this.PB_Female = new System.Windows.Forms.PictureBox();
@@ -42,18 +49,16 @@
             this.PanelLine_Telefono = new System.Windows.Forms.Panel();
             this.PanelLine_Apellido = new System.Windows.Forms.Panel();
             this.PanelLine_Nombre = new System.Windows.Forms.Panel();
-            this.LB_Edad = new System.Windows.Forms.Label();
-            this.LB_Apellido = new System.Windows.Forms.Label();
             this.LB_Name = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
+            this.LB_Apellido = new System.Windows.Forms.Label();
             this.TB_Apellido = new System.Windows.Forms.TextBox();
-            this.TB_Edad = new System.Windows.Forms.TextBox();
             this.LB_Telefono = new System.Windows.Forms.Label();
             this.TB_Telefono = new System.Windows.Forms.TextBox();
             this.LB_Estatura = new System.Windows.Forms.Label();
             this.TB_Estatura = new System.Windows.Forms.TextBox();
-            this.LB_Hombre = new System.Windows.Forms.Label();
-            this.LB_Mujer = new System.Windows.Forms.Label();
+            this.LB_Edad = new System.Windows.Forms.Label();
+            this.TB_Edad = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -86,6 +91,11 @@
             // MainPanel
             // 
             this.MainPanel.BackColor = System.Drawing.Color.White;
+            this.MainPanel.Controls.Add(this.LB_AdvertenciaEstatura);
+            this.MainPanel.Controls.Add(this.LB_AdvertenciaEdad);
+            this.MainPanel.Controls.Add(this.LB_AdvertenciaTelefono);
+            this.MainPanel.Controls.Add(this.LB_AdvertenciaApellido);
+            this.MainPanel.Controls.Add(this.LB_AdvertenciaNombre);
             this.MainPanel.Controls.Add(this.LB_Mujer);
             this.MainPanel.Controls.Add(this.LB_Hombre);
             this.MainPanel.Controls.Add(this.BTN_Cancelar);
@@ -100,9 +110,8 @@
             this.MainPanel.Controls.Add(this.PanelLine_Nombre);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.LB_Titulo);
-            this.MainPanel.Controls.Add(this.LB_Apellido);
-            this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Controls.Add(this.TB_Nombre);
+            this.MainPanel.Controls.Add(this.LB_Apellido);
             this.MainPanel.Controls.Add(this.TB_Apellido);
             this.MainPanel.Controls.Add(this.LB_Telefono);
             this.MainPanel.Controls.Add(this.TB_Telefono);
@@ -110,11 +119,97 @@
             this.MainPanel.Controls.Add(this.TB_Estatura);
             this.MainPanel.Controls.Add(this.LB_Edad);
             this.MainPanel.Controls.Add(this.TB_Edad);
+            this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Location = new System.Drawing.Point(53, 70);
             this.MainPanel.Margin = new System.Windows.Forms.Padding(4);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(633, 761);
             this.MainPanel.TabIndex = 2;
+            // 
+            // LB_AdvertenciaEstatura
+            // 
+            this.LB_AdvertenciaEstatura.AutoSize = true;
+            this.LB_AdvertenciaEstatura.Font = new System.Drawing.Font("Corbel", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_AdvertenciaEstatura.ForeColor = System.Drawing.Color.Brown;
+            this.LB_AdvertenciaEstatura.Location = new System.Drawing.Point(71, 529);
+            this.LB_AdvertenciaEstatura.Name = "LB_AdvertenciaEstatura";
+            this.LB_AdvertenciaEstatura.Size = new System.Drawing.Size(141, 15);
+            this.LB_AdvertenciaEstatura.TabIndex = 27;
+            this.LB_AdvertenciaEstatura.Text = "Solo se aceptan numeros";
+            this.LB_AdvertenciaEstatura.Visible = false;
+            // 
+            // LB_AdvertenciaEdad
+            // 
+            this.LB_AdvertenciaEdad.AutoSize = true;
+            this.LB_AdvertenciaEdad.Font = new System.Drawing.Font("Corbel", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_AdvertenciaEdad.ForeColor = System.Drawing.Color.Brown;
+            this.LB_AdvertenciaEdad.Location = new System.Drawing.Point(71, 456);
+            this.LB_AdvertenciaEdad.Name = "LB_AdvertenciaEdad";
+            this.LB_AdvertenciaEdad.Size = new System.Drawing.Size(141, 15);
+            this.LB_AdvertenciaEdad.TabIndex = 26;
+            this.LB_AdvertenciaEdad.Text = "Solo se aceptan numeros";
+            this.LB_AdvertenciaEdad.Visible = false;
+            // 
+            // LB_AdvertenciaTelefono
+            // 
+            this.LB_AdvertenciaTelefono.AutoSize = true;
+            this.LB_AdvertenciaTelefono.Font = new System.Drawing.Font("Corbel", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_AdvertenciaTelefono.ForeColor = System.Drawing.Color.Brown;
+            this.LB_AdvertenciaTelefono.Location = new System.Drawing.Point(71, 370);
+            this.LB_AdvertenciaTelefono.Name = "LB_AdvertenciaTelefono";
+            this.LB_AdvertenciaTelefono.Size = new System.Drawing.Size(141, 15);
+            this.LB_AdvertenciaTelefono.TabIndex = 25;
+            this.LB_AdvertenciaTelefono.Text = "Solo se aceptan numeros";
+            this.LB_AdvertenciaTelefono.Visible = false;
+            // 
+            // LB_AdvertenciaApellido
+            // 
+            this.LB_AdvertenciaApellido.AutoSize = true;
+            this.LB_AdvertenciaApellido.Font = new System.Drawing.Font("Corbel", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_AdvertenciaApellido.ForeColor = System.Drawing.Color.Brown;
+            this.LB_AdvertenciaApellido.Location = new System.Drawing.Point(71, 289);
+            this.LB_AdvertenciaApellido.Name = "LB_AdvertenciaApellido";
+            this.LB_AdvertenciaApellido.Size = new System.Drawing.Size(123, 15);
+            this.LB_AdvertenciaApellido.TabIndex = 24;
+            this.LB_AdvertenciaApellido.Text = "Solo se aceptan letras";
+            this.LB_AdvertenciaApellido.Visible = false;
+            // 
+            // LB_AdvertenciaNombre
+            // 
+            this.LB_AdvertenciaNombre.AutoSize = true;
+            this.LB_AdvertenciaNombre.Font = new System.Drawing.Font("Corbel", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_AdvertenciaNombre.ForeColor = System.Drawing.Color.Brown;
+            this.LB_AdvertenciaNombre.Location = new System.Drawing.Point(70, 217);
+            this.LB_AdvertenciaNombre.Name = "LB_AdvertenciaNombre";
+            this.LB_AdvertenciaNombre.Size = new System.Drawing.Size(123, 15);
+            this.LB_AdvertenciaNombre.TabIndex = 23;
+            this.LB_AdvertenciaNombre.Text = "Solo se aceptan letras";
+            this.LB_AdvertenciaNombre.Visible = false;
+            this.LB_AdvertenciaNombre.Click += new System.EventHandler(this.LB_AdvertenciaNombre_Click);
+            // 
+            // LB_Mujer
+            // 
+            this.LB_Mujer.AutoSize = true;
+            this.LB_Mujer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Mujer.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Mujer.Location = new System.Drawing.Point(400, 544);
+            this.LB_Mujer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Mujer.Name = "LB_Mujer";
+            this.LB_Mujer.Size = new System.Drawing.Size(65, 23);
+            this.LB_Mujer.TabIndex = 22;
+            this.LB_Mujer.Text = "Mujer";
+            // 
+            // LB_Hombre
+            // 
+            this.LB_Hombre.AutoSize = true;
+            this.LB_Hombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Hombre.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Hombre.Location = new System.Drawing.Point(283, 544);
+            this.LB_Hombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Hombre.Name = "LB_Hombre";
+            this.LB_Hombre.Size = new System.Drawing.Size(76, 23);
+            this.LB_Hombre.TabIndex = 21;
+            this.LB_Hombre.Text = "Hombre";
             // 
             // BTN_Cancelar
             // 
@@ -231,34 +326,6 @@
             this.PanelLine_Nombre.Size = new System.Drawing.Size(467, 4);
             this.PanelLine_Nombre.TabIndex = 2;
             // 
-            // LB_Edad
-            // 
-            this.LB_Edad.AutoSize = true;
-            this.LB_Edad.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Edad.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Edad.Location = new System.Drawing.Point(68, 415);
-            this.LB_Edad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Edad.Name = "LB_Edad";
-            this.LB_Edad.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Edad.Size = new System.Drawing.Size(424, 32);
-            this.LB_Edad.TabIndex = 4;
-            this.LB_Edad.Text = "Edad";
-            this.LB_Edad.Click += new System.EventHandler(this.LB_Edad_Click);
-            // 
-            // LB_Apellido
-            // 
-            this.LB_Apellido.AutoSize = true;
-            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Apellido.Location = new System.Drawing.Point(68, 247);
-            this.LB_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Apellido.Name = "LB_Apellido";
-            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
-            this.LB_Apellido.Size = new System.Drawing.Size(499, 32);
-            this.LB_Apellido.TabIndex = 2;
-            this.LB_Apellido.Text = "Apellidos";
-            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
-            // 
             // LB_Name
             // 
             this.LB_Name.AutoSize = true;
@@ -284,6 +351,20 @@
             this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
             this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
+            // LB_Apellido
+            // 
+            this.LB_Apellido.AutoSize = true;
+            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Apellido.Location = new System.Drawing.Point(68, 247);
+            this.LB_Apellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Apellido.Name = "LB_Apellido";
+            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
+            this.LB_Apellido.Size = new System.Drawing.Size(499, 32);
+            this.LB_Apellido.TabIndex = 2;
+            this.LB_Apellido.Text = "Apellidos";
+            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
+            // 
             // TB_Apellido
             // 
             this.TB_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -294,18 +375,6 @@
             this.TB_Apellido.TabIndex = 3;
             this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
             this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
-            // 
-            // TB_Edad
-            // 
-            this.TB_Edad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Edad.Location = new System.Drawing.Point(73, 423);
-            this.TB_Edad.Margin = new System.Windows.Forms.Padding(4);
-            this.TB_Edad.MaxLength = 2;
-            this.TB_Edad.Name = "TB_Edad";
-            this.TB_Edad.Size = new System.Drawing.Size(467, 15);
-            this.TB_Edad.TabIndex = 5;
-            this.TB_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Edad_KeyPress);
-            this.TB_Edad.Leave += new System.EventHandler(this.TB_Edad_Leave);
             // 
             // LB_Telefono
             // 
@@ -359,29 +428,31 @@
             this.TB_Estatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Estatura_KeyPress);
             this.TB_Estatura.Leave += new System.EventHandler(this.TB_Estatura_Leave);
             // 
-            // LB_Hombre
+            // LB_Edad
             // 
-            this.LB_Hombre.AutoSize = true;
-            this.LB_Hombre.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Hombre.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Hombre.Location = new System.Drawing.Point(283, 544);
-            this.LB_Hombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Hombre.Name = "LB_Hombre";
-            this.LB_Hombre.Size = new System.Drawing.Size(76, 23);
-            this.LB_Hombre.TabIndex = 21;
-            this.LB_Hombre.Text = "Hombre";
+            this.LB_Edad.AutoSize = true;
+            this.LB_Edad.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Edad.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Edad.Location = new System.Drawing.Point(68, 415);
+            this.LB_Edad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LB_Edad.Name = "LB_Edad";
+            this.LB_Edad.Padding = new System.Windows.Forms.Padding(0, 0, 350, 0);
+            this.LB_Edad.Size = new System.Drawing.Size(424, 32);
+            this.LB_Edad.TabIndex = 4;
+            this.LB_Edad.Text = "Edad";
+            this.LB_Edad.Click += new System.EventHandler(this.LB_Edad_Click);
             // 
-            // LB_Mujer
+            // TB_Edad
             // 
-            this.LB_Mujer.AutoSize = true;
-            this.LB_Mujer.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Mujer.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Mujer.Location = new System.Drawing.Point(400, 544);
-            this.LB_Mujer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.LB_Mujer.Name = "LB_Mujer";
-            this.LB_Mujer.Size = new System.Drawing.Size(65, 23);
-            this.LB_Mujer.TabIndex = 22;
-            this.LB_Mujer.Text = "Mujer";
+            this.TB_Edad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Edad.Location = new System.Drawing.Point(73, 423);
+            this.TB_Edad.Margin = new System.Windows.Forms.Padding(4);
+            this.TB_Edad.MaxLength = 2;
+            this.TB_Edad.Name = "TB_Edad";
+            this.TB_Edad.Size = new System.Drawing.Size(467, 15);
+            this.TB_Edad.TabIndex = 5;
+            this.TB_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Edad_KeyPress);
+            this.TB_Edad.Leave += new System.EventHandler(this.TB_Edad_Leave);
             // 
             // Form1
             // 
@@ -432,6 +503,11 @@
         private System.Windows.Forms.Button BTN_Cancelar;
         private System.Windows.Forms.Label LB_Mujer;
         private System.Windows.Forms.Label LB_Hombre;
+        private System.Windows.Forms.Label LB_AdvertenciaNombre;
+        private System.Windows.Forms.Label LB_AdvertenciaEstatura;
+        private System.Windows.Forms.Label LB_AdvertenciaEdad;
+        private System.Windows.Forms.Label LB_AdvertenciaTelefono;
+        private System.Windows.Forms.Label LB_AdvertenciaApellido;
     }
 }
 

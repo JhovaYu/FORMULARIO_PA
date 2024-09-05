@@ -20,13 +20,13 @@ namespace FORMULARIO_PA
         }
 
         public static void AjustarLabelFormUp(Label label, Point ubicacion)
+        {
+            if (label != null)
             {
-                if (label != null)
-                {
-                    label.Location = ubicacion;
-                    label.ForeColor = SystemColors.GradientActiveCaption;
-                }
+                label.Location = ubicacion;
+                label.ForeColor = SystemColors.GradientActiveCaption;
             }
+        }
 
         public static void LimpiarPaneles(TextBox Nombre, TextBox Apellido, TextBox Telefono, TextBox Edad, TextBox Estatura)
         {
@@ -37,6 +37,42 @@ namespace FORMULARIO_PA
             Estatura.Clear();
         }
 
+        public static void ComprobarStrings(Label LB, KeyPressEventArgs KeyPressEvent)
+        {
+
+            if (!char.IsLetter(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar))
+            {
+                LB.Visible = true;
+                KeyPressEvent.Handled = true;
+            }
+            else
+            {
+                LB.Visible = false;
+
+
+            }
+        }
+
+        public static void ComprobarInts(Label LB, KeyPressEventArgs KeyPressEvent)
+        {
+
+            if (!char.IsNumber(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar))
+            {
+                LB.Visible = true;
+                KeyPressEvent.Handled = true;
+            }
+            else
+            {
+                LB.Visible = false;
+
+
+            }
+        }
+
+        public static void OcultarAdvertencia(TextBox TB, Label LB)
+        {
+            LB.Visible = false;
+        }
     }
 
     

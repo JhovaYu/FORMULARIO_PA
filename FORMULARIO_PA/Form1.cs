@@ -174,26 +174,31 @@ namespace FORMULARIO_PA
         private void PB_Female_Click(object sender, EventArgs e)
         {
             Genero = false;
+            //PB_Female.Image("C:\Users\alfom\Pictures\Formulario_PNG\femenine_grey.png");
         }
 
         private void TB_Estatura_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = !char.IsDigit(KeyPressEvent.KeyChar);
+            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
+            Funciones.ComprobarInts(LB_AdvertenciaEstatura, KeyPressEvent);
         }
 
         private void TB_Nombre_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
             KeyPressEvent.Handled = char.IsDigit(KeyPressEvent.KeyChar);
+            Funciones.ComprobarStrings(LB_AdvertenciaNombre, KeyPressEvent);
         }
 
         private void TB_Apellido_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
             KeyPressEvent.Handled = char.IsDigit(KeyPressEvent.KeyChar);
+            Funciones.ComprobarStrings(LB_AdvertenciaApellido, KeyPressEvent);
         }
 
         private void PB_Male_MouseEnter(object sender, EventArgs e)
         {
             PB_Male.Size = new Size(54, 51);
+
         }
 
         private void PB_Male_MouseLeave(object sender, EventArgs e)
@@ -211,6 +216,11 @@ namespace FORMULARIO_PA
             PB_Female.Size = new Size(46, 46);
         }
 
+        private void LB_AdvertenciaNombre_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void LB_Telefono_Click_1(object sender, EventArgs e)
         {
             Funciones.AjustarLabelFormDown(LB_Telefono, new Point(51, 251));
@@ -220,12 +230,14 @@ namespace FORMULARIO_PA
 
         private void TB_Edad_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = !char.IsDigit(KeyPressEvent.KeyChar);
+            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
+            Funciones.ComprobarInts(LB_AdvertenciaEdad, KeyPressEvent);
         }
 
         private void TB_Telefono_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = !char.IsDigit(KeyPressEvent.KeyChar);
+            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
+            Funciones.ComprobarInts(LB_AdvertenciaTelefono, KeyPressEvent);
         }
 
 
