@@ -191,7 +191,8 @@ namespace FORMULARIO_PA
 
         private void TB_Apellido_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = char.IsDigit(KeyPressEvent.KeyChar);
+            KeyPressEvent.Handled = !(char.IsLetter(KeyPressEvent.KeyChar) || KeyPressEvent.KeyChar == (char)Keys.Space ||
+                              KeyPressEvent.KeyChar == (char)Keys.Back);
             Funciones.ComprobarStrings(LB_AdvertenciaApellido, KeyPressEvent);
         }
 
