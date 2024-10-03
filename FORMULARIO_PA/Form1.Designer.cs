@@ -49,16 +49,16 @@
             this.PanelLine_Telefono = new System.Windows.Forms.Panel();
             this.PanelLine_Apellido = new System.Windows.Forms.Panel();
             this.PanelLine_Nombre = new System.Windows.Forms.Panel();
+            this.LB_Apellido = new System.Windows.Forms.Label();
+            this.TB_Apellido = new System.Windows.Forms.TextBox();
             this.LB_Telefono = new System.Windows.Forms.Label();
             this.TB_Telefono = new System.Windows.Forms.TextBox();
             this.LB_Estatura = new System.Windows.Forms.Label();
-            this.TB_Estatura = new System.Windows.Forms.TextBox();
             this.LB_Edad = new System.Windows.Forms.Label();
+            this.TB_Estatura = new System.Windows.Forms.TextBox();
             this.TB_Edad = new System.Windows.Forms.TextBox();
             this.LB_Name = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
-            this.LB_Apellido = new System.Windows.Forms.Label();
-            this.TB_Apellido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -75,7 +75,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(68, 64);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.Click += new System.EventHandler(this.CloseIMG_Click);
             // 
             // LB_Titulo
             // 
@@ -111,14 +111,14 @@
             this.MainPanel.Controls.Add(this.PanelLine_Nombre);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.LB_Titulo);
+            this.MainPanel.Controls.Add(this.LB_Apellido);
+            this.MainPanel.Controls.Add(this.TB_Apellido);
             this.MainPanel.Controls.Add(this.LB_Telefono);
             this.MainPanel.Controls.Add(this.TB_Telefono);
             this.MainPanel.Controls.Add(this.LB_Estatura);
-            this.MainPanel.Controls.Add(this.TB_Estatura);
             this.MainPanel.Controls.Add(this.LB_Edad);
+            this.MainPanel.Controls.Add(this.TB_Estatura);
             this.MainPanel.Controls.Add(this.TB_Edad);
-            this.MainPanel.Controls.Add(this.LB_Apellido);
-            this.MainPanel.Controls.Add(this.TB_Apellido);
             this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Controls.Add(this.TB_Nombre);
             this.MainPanel.Location = new System.Drawing.Point(40, 57);
@@ -190,7 +190,6 @@
             this.LB_AdvertenciaNombre.TabIndex = 23;
             this.LB_AdvertenciaNombre.Text = "Solo se aceptan letras";
             this.LB_AdvertenciaNombre.Visible = false;
-            this.LB_AdvertenciaNombre.Click += new System.EventHandler(this.LB_AdvertenciaNombre_Click);
             // 
             // LB_Mujer
             // 
@@ -222,7 +221,7 @@
             this.BTN_Cancelar.Location = new System.Drawing.Point(279, 558);
             this.BTN_Cancelar.Name = "BTN_Cancelar";
             this.BTN_Cancelar.Size = new System.Drawing.Size(105, 36);
-            this.BTN_Cancelar.TabIndex = 6;
+            this.BTN_Cancelar.TabIndex = 7;
             this.BTN_Cancelar.Text = "Cancelar";
             this.BTN_Cancelar.UseVisualStyleBackColor = false;
             this.BTN_Cancelar.Click += new System.EventHandler(this.BTN_Cancelar_Click);
@@ -235,16 +234,16 @@
             this.BTN_Guardar.Location = new System.Drawing.Point(89, 558);
             this.BTN_Guardar.Name = "BTN_Guardar";
             this.BTN_Guardar.Size = new System.Drawing.Size(105, 36);
-            this.BTN_Guardar.TabIndex = 7;
+            this.BTN_Guardar.TabIndex = 6;
             this.BTN_Guardar.Text = "Aceptar";
             this.BTN_Guardar.UseVisualStyleBackColor = false;
-            this.BTN_Guardar.Click += new System.EventHandler(this.button1_Click);
+            this.BTN_Guardar.Click += new System.EventHandler(this.Guardar_Click);
             // 
             // PB_Female
             // 
             this.PB_Female.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.PB_Female.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_Female.Image = global::FORMULARIO_PA.Properties.Resources.femenine;
+            this.PB_Female.Image = ((System.Drawing.Image)(resources.GetObject("PB_Female.Image")));
             this.PB_Female.Location = new System.Drawing.Point(303, 464);
             this.PB_Female.Name = "PB_Female";
             this.PB_Female.Padding = new System.Windows.Forms.Padding(5);
@@ -260,7 +259,7 @@
             // 
             this.PB_Male.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Male.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_Male.Image = global::FORMULARIO_PA.Properties.Resources.male;
+            this.PB_Male.Image = ((System.Drawing.Image)(resources.GetObject("PB_Male.Image")));
             this.PB_Male.Location = new System.Drawing.Point(216, 464);
             this.PB_Male.Name = "PB_Male";
             this.PB_Male.Padding = new System.Windows.Forms.Padding(5);
@@ -323,6 +322,30 @@
             this.PanelLine_Nombre.Size = new System.Drawing.Size(350, 3);
             this.PanelLine_Nombre.TabIndex = 2;
             // 
+            // LB_Apellido
+            // 
+            this.LB_Apellido.AutoSize = true;
+            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Apellido.Location = new System.Drawing.Point(51, 201);
+            this.LB_Apellido.Name = "LB_Apellido";
+            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 262, 0);
+            this.LB_Apellido.Size = new System.Drawing.Size(380, 24);
+            this.LB_Apellido.TabIndex = 2;
+            this.LB_Apellido.Text = "Apellidos";
+            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
+            // 
+            // TB_Apellido
+            // 
+            this.TB_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Apellido.Location = new System.Drawing.Point(55, 208);
+            this.TB_Apellido.Name = "TB_Apellido";
+            this.TB_Apellido.Size = new System.Drawing.Size(350, 13);
+            this.TB_Apellido.TabIndex = 2;
+            this.TB_Apellido.Enter += new System.EventHandler(this.TB_Apellido_Enter);
+            this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
+            this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
+            // 
             // LB_Telefono
             // 
             this.LB_Telefono.AutoSize = true;
@@ -334,7 +357,7 @@
             this.LB_Telefono.Size = new System.Drawing.Size(368, 24);
             this.LB_Telefono.TabIndex = 3;
             this.LB_Telefono.Text = "Telefono";
-            this.LB_Telefono.Click += new System.EventHandler(this.LB_Telefono_Click_1);
+            this.LB_Telefono.Click += new System.EventHandler(this.LB_Telefono_Click);
             // 
             // TB_Telefono
             // 
@@ -343,7 +366,8 @@
             this.TB_Telefono.MaxLength = 10;
             this.TB_Telefono.Name = "TB_Telefono";
             this.TB_Telefono.Size = new System.Drawing.Size(350, 13);
-            this.TB_Telefono.TabIndex = 4;
+            this.TB_Telefono.TabIndex = 3;
+            this.TB_Telefono.Enter += new System.EventHandler(this.TB_Telefono_Enter);
             this.TB_Telefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Telefono_KeyPress);
             this.TB_Telefono.Leave += new System.EventHandler(this.TB_Telefono_Leave);
             // 
@@ -360,17 +384,6 @@
             this.LB_Estatura.Text = "Estatura (cm)";
             this.LB_Estatura.Click += new System.EventHandler(this.LB_Estatura_Click);
             // 
-            // TB_Estatura
-            // 
-            this.TB_Estatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Estatura.Location = new System.Drawing.Point(55, 403);
-            this.TB_Estatura.MaxLength = 3;
-            this.TB_Estatura.Name = "TB_Estatura";
-            this.TB_Estatura.Size = new System.Drawing.Size(350, 13);
-            this.TB_Estatura.TabIndex = 6;
-            this.TB_Estatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Estatura_KeyPress);
-            this.TB_Estatura.Leave += new System.EventHandler(this.TB_Estatura_Leave);
-            // 
             // LB_Edad
             // 
             this.LB_Edad.AutoSize = true;
@@ -384,6 +397,18 @@
             this.LB_Edad.Text = "Edad";
             this.LB_Edad.Click += new System.EventHandler(this.LB_Edad_Click);
             // 
+            // TB_Estatura
+            // 
+            this.TB_Estatura.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Estatura.Location = new System.Drawing.Point(55, 403);
+            this.TB_Estatura.MaxLength = 3;
+            this.TB_Estatura.Name = "TB_Estatura";
+            this.TB_Estatura.Size = new System.Drawing.Size(350, 13);
+            this.TB_Estatura.TabIndex = 5;
+            this.TB_Estatura.Enter += new System.EventHandler(this.TB_Estatura_Enter);
+            this.TB_Estatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Estatura_KeyPress);
+            this.TB_Estatura.Leave += new System.EventHandler(this.TB_Estatura_Leave);
+            // 
             // TB_Edad
             // 
             this.TB_Edad.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -391,7 +416,8 @@
             this.TB_Edad.MaxLength = 2;
             this.TB_Edad.Name = "TB_Edad";
             this.TB_Edad.Size = new System.Drawing.Size(350, 13);
-            this.TB_Edad.TabIndex = 5;
+            this.TB_Edad.TabIndex = 4;
+            this.TB_Edad.Enter += new System.EventHandler(this.TB_Edad_Enter);
             this.TB_Edad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Edad_KeyPress);
             this.TB_Edad.Leave += new System.EventHandler(this.TB_Edad_Leave);
             // 
@@ -414,32 +440,10 @@
             this.TB_Nombre.Location = new System.Drawing.Point(55, 150);
             this.TB_Nombre.Name = "TB_Nombre";
             this.TB_Nombre.Size = new System.Drawing.Size(856, 13);
-            this.TB_Nombre.TabIndex = 2;
+            this.TB_Nombre.TabIndex = 1;
+            this.TB_Nombre.Enter += new System.EventHandler(this.TB_Nombre_Enter);
             this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
-            this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
-            // LB_Apellido
-            // 
-            this.LB_Apellido.AutoSize = true;
-            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Apellido.Location = new System.Drawing.Point(51, 201);
-            this.LB_Apellido.Name = "LB_Apellido";
-            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 262, 0);
-            this.LB_Apellido.Size = new System.Drawing.Size(380, 24);
-            this.LB_Apellido.TabIndex = 2;
-            this.LB_Apellido.Text = "Apellidos";
-            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
-            // 
-            // TB_Apellido
-            // 
-            this.TB_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Apellido.Location = new System.Drawing.Point(55, 208);
-            this.TB_Apellido.Name = "TB_Apellido";
-            this.TB_Apellido.Size = new System.Drawing.Size(350, 13);
-            this.TB_Apellido.TabIndex = 3;
-            this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
-            this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
+            this.TB_Nombre.Leave += new System.EventHandler(this.TB_Nombre_Leave);
             // 
             // Form1
             // 

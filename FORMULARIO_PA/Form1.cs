@@ -40,9 +40,16 @@ namespace FORMULARIO_PA
             Funciones.LimpiarPaneles(TB_Nombre, TB_Apellido, TB_Telefono, TB_Edad, TB_Estatura);
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void CloseIMG_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        private void Guardar_Click(object sender, EventArgs e)
+        {
+            PI.AgregarInfo(Nombre, Apellido, Telefono, Edad, Estatura, Genero);
+            PI.Show();
         }
 
         private void LB_Name_Click(object sender, EventArgs e)
@@ -50,12 +57,6 @@ namespace FORMULARIO_PA
             Funciones.AjustarLabelFormDown(LB_Name, new Point(51, 120));
             TB_Nombre.Focus();
             
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PI.AgregarInfo(Nombre, Apellido, Telefono, Edad, Estatura, Genero);
-            PI.Show();
         }
 
         private void LB_Apellido_Click(object sender, EventArgs e)
@@ -82,10 +83,9 @@ namespace FORMULARIO_PA
             TB_Estatura.Focus();
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
+        private void TB_Nombre_Leave(object sender, EventArgs e)
         {
             Funciones.RegresarEstadoOriginal(TB_Nombre, LB_Name, value => Nombre = value, new Point(51, 140));
-            
         }
 
         private void TB_Apellido_Leave(object sender, EventArgs e)
@@ -163,15 +163,29 @@ namespace FORMULARIO_PA
             PB_Female.Padding = new Padding(5, 5, 5, 5);
         }
 
-        private void LB_AdvertenciaNombre_Click(object sender, EventArgs e)
+        private void TB_Telefono_Enter(object sender, EventArgs e)
         {
-
+            Funciones.AjustarLabelFormDown(LB_Telefono, new Point(51, 247));
         }
 
-        private void LB_Telefono_Click_1(object sender, EventArgs e)
+        private void TB_Edad_Enter(object sender, EventArgs e)
         {
-            Funciones.AjustarLabelFormDown(LB_Telefono, new Point(51, 251));
-            TB_Telefono.Focus();
+            Funciones.AjustarLabelFormDown(LB_Edad, new Point(51, 317));
+        }
+
+        private void TB_Estatura_Enter(object sender, EventArgs e)
+        {
+            Funciones.AjustarLabelFormDown(LB_Estatura, new Point(51, 376));
+        }
+
+        private void TB_Nombre_Enter(object sender, EventArgs e)
+        {
+            Funciones.AjustarLabelFormDown(LB_Name, new Point(51, 120));
+        }
+
+        private void TB_Apellido_Enter(object sender, EventArgs e)
+        {
+            Funciones.AjustarLabelFormDown(LB_Apellido, new Point(51, 181));
         }
     
 
