@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using MySql.Data.MySqlClient;
 
 
 namespace FORMULARIO_PA
@@ -25,6 +26,8 @@ namespace FORMULARIO_PA
         public Boolean isClose, Genero;
 
         private bool _actualizandoTexto = false;
+
+        private ConexionBD conexion;
 
         HashSet<char> valoresPermitidos = new HashSet<char>
 {
@@ -48,8 +51,8 @@ namespace FORMULARIO_PA
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             PI = new PanelInformation(this);
-            
 
+            conexion = new ConexionBD();
         }
 
         private void PanelInformation_ValorChanged(object sender, EventArgs e)
@@ -179,20 +182,16 @@ namespace FORMULARIO_PA
 
         private void TB_Estatura_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
             Funciones.ComprobarInts(LB_AdvertenciaEstatura, KeyPressEvent);
         }
 
         private void TB_Nombre_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = char.IsDigit(KeyPressEvent.KeyChar);
             Funciones.ComprobarStrings(LB_AdvertenciaNombre, KeyPressEvent);
         }
 
         private void TB_Apellido_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = !(char.IsLetter(KeyPressEvent.KeyChar) || KeyPressEvent.KeyChar == (char)Keys.Space ||
-                              KeyPressEvent.KeyChar == (char)Keys.Back);
             Funciones.ComprobarStrings(LB_AdvertenciaApellido, KeyPressEvent);
         }
 
@@ -231,13 +230,11 @@ namespace FORMULARIO_PA
 
         private void TB_Edad_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
         {
-            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
             Funciones.ComprobarInts(LB_AdvertenciaEdad, KeyPressEvent);
         }
 
         private void TB_Telefono_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
-        {
-            KeyPressEvent.Handled = (!char.IsDigit(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar));
+        {   
             Funciones.ComprobarInts(LB_AdvertenciaTelefono, KeyPressEvent);
         }
 

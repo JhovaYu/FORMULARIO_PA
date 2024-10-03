@@ -39,34 +39,20 @@ namespace FORMULARIO_PA
 
         public static void ComprobarStrings(Label LB, KeyPressEventArgs KeyPressEvent)
         {
+            bool esValido = char.IsLetter(KeyPressEvent.KeyChar) ||
+                    KeyPressEvent.KeyChar == (char)Keys.Space ||
+                    KeyPressEvent.KeyChar == (char)Keys.Back;
 
-            if (!char.IsLetter(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar))
-            {
-                LB.Visible = true;
-                KeyPressEvent.Handled = true;
-            }
-            else
-            {
-                LB.Visible = false;
+            KeyPressEvent.Handled = !esValido;
 
-
-            }
+            LB.Visible = !esValido;
         }
 
         public static void ComprobarInts(Label LB, KeyPressEventArgs KeyPressEvent)
         {
-
-            if (!char.IsNumber(KeyPressEvent.KeyChar) && !char.IsControl(KeyPressEvent.KeyChar))
-            {
-                LB.Visible = true;
-                KeyPressEvent.Handled = true;
-            }
-            else
-            {
-                LB.Visible = false;
-
-
-            }
+            bool esValido = char.IsDigit(KeyPressEvent.KeyChar) || char.IsControl(KeyPressEvent.KeyChar);
+            KeyPressEvent.Handled = !esValido;
+            LB.Visible = !esValido;
         }
 
         public static void OcultarAdvertencia(TextBox TB, Label LB)

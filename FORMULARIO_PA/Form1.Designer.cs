@@ -49,7 +49,6 @@
             this.PanelLine_Telefono = new System.Windows.Forms.Panel();
             this.PanelLine_Apellido = new System.Windows.Forms.Panel();
             this.PanelLine_Nombre = new System.Windows.Forms.Panel();
-            this.TB_Nombre = new System.Windows.Forms.TextBox();
             this.LB_Apellido = new System.Windows.Forms.Label();
             this.TB_Apellido = new System.Windows.Forms.TextBox();
             this.LB_Telefono = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.LB_Edad = new System.Windows.Forms.Label();
             this.TB_Edad = new System.Windows.Forms.TextBox();
             this.LB_Name = new System.Windows.Forms.Label();
+            this.TB_Nombre = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -70,7 +70,7 @@
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(417, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(68, 64);
             this.pictureBox1.TabIndex = 0;
@@ -111,8 +111,6 @@
             this.MainPanel.Controls.Add(this.PanelLine_Nombre);
             this.MainPanel.Controls.Add(this.pictureBox1);
             this.MainPanel.Controls.Add(this.LB_Titulo);
-            this.MainPanel.Controls.Add(this.LB_Apellido);
-            this.MainPanel.Controls.Add(this.TB_Apellido);
             this.MainPanel.Controls.Add(this.LB_Telefono);
             this.MainPanel.Controls.Add(this.TB_Telefono);
             this.MainPanel.Controls.Add(this.LB_Estatura);
@@ -121,6 +119,8 @@
             this.MainPanel.Controls.Add(this.TB_Edad);
             this.MainPanel.Controls.Add(this.LB_Name);
             this.MainPanel.Controls.Add(this.TB_Nombre);
+            this.MainPanel.Controls.Add(this.LB_Apellido);
+            this.MainPanel.Controls.Add(this.TB_Apellido);
             this.MainPanel.Location = new System.Drawing.Point(40, 57);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(475, 618);
@@ -319,16 +319,6 @@
             this.PanelLine_Nombre.Size = new System.Drawing.Size(350, 3);
             this.PanelLine_Nombre.TabIndex = 2;
             // 
-            // TB_Nombre
-            // 
-            this.TB_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Nombre.Location = new System.Drawing.Point(55, 150);
-            this.TB_Nombre.Name = "TB_Nombre";
-            this.TB_Nombre.Size = new System.Drawing.Size(856, 13);
-            this.TB_Nombre.TabIndex = 2;
-            this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
-            this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
-            // 
             // LB_Apellido
             // 
             this.LB_Apellido.AutoSize = true;
@@ -437,6 +427,16 @@
             this.LB_Name.Text = "Nombre";
             this.LB_Name.Click += new System.EventHandler(this.LB_Name_Click);
             // 
+            // TB_Nombre
+            // 
+            this.TB_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Nombre.Location = new System.Drawing.Point(55, 150);
+            this.TB_Nombre.Name = "TB_Nombre";
+            this.TB_Nombre.Size = new System.Drawing.Size(856, 13);
+            this.TB_Nombre.TabIndex = 2;
+            this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
+            this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -446,7 +446,7 @@
             this.ClientSize = new System.Drawing.Size(552, 718);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";

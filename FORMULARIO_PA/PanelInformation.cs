@@ -32,14 +32,7 @@ namespace FORMULARIO_PA
             LB_TelefonoPI.Text = "Telefono: " + Telefono;
             LB_EdadPI.Text = "Edad: " + Edad;
             LB_EstaturaPI.Text = "Estatura: " + Estatura;
-            if (Genero)
-            {
-                LB_GeneroPI.Text = "Genero: Hombre";
-            }
-            else
-            {
-                LB_GeneroPI.Text = "Genero: Mujer";
-            }
+            LB_GeneroPI.Text = Genero ? "Hombre" : "Mujer";
         }
 
         private void btn_Ok_InfoPanel_Click_1(object sender, EventArgs e)
@@ -57,20 +50,12 @@ namespace FORMULARIO_PA
             int Edad = F1.Edad;
             int Estatura = F1.Estatura;
             bool Genero = F1.Genero;
-            String genero = "";
-            if (Genero)
-            {
-                genero = "Hombre";
-            }
-            else
-            {
-                genero = "Mujer";
-            }
+            String genero = Genero ? "Hombre" : "Mujer";
 
-            GuardarArhivos(Nombre, Apellido, Telefono, Edad, Estatura, genero);
+            GuardarArchivosBD(Nombre, Apellido, Telefono, Edad, Estatura, genero);
         }
 
-        public void GuardarArhivos(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, string Genero)
+        public void GuardarArchivos(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, string Genero)
         {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
             saveFileDialog.Filter = "Archivos de texto (*.txt)|*.txt|Todos los archivos (*.*)|*.*";
@@ -94,8 +79,19 @@ namespace FORMULARIO_PA
                     escritor.WriteLine("Genero: " + Genero);
                 }
             }
+        }
 
-
+        public void GuardarArchivosBD(string Nombre, string Apellido, string Telefono, int Edad, int Estatura, string Genero)
+        {
+            try
+            {
+                ConexionBD conexionBD = new ConexionBD();
+                conexionBD.InsertarRegistro(Nombre, Apellido, Telefono, Edad, (decimal)Estatura, Genero);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al guardar en la base de datos: " + ex.Message);
+            }
         }
     }
 }
