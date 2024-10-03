@@ -28,6 +28,18 @@ namespace FORMULARIO_PA
             }
         }
 
+        public static void RegresarEstadoOriginal(TextBox textBox, Label label, Action<String> setValue, Point labelPosition)
+        {
+            if (String.IsNullOrEmpty(textBox.Text))
+            {
+                AjustarLabelFormUp(label, labelPosition);
+            }
+            else
+            {
+                setValue(textBox.Text);
+            }
+        }
+
         public static void LimpiarPaneles(TextBox Nombre, TextBox Apellido, TextBox Telefono, TextBox Edad, TextBox Estatura)
         {
             Nombre.Clear();

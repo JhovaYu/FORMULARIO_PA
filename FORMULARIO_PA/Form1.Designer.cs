@@ -49,8 +49,6 @@
             this.PanelLine_Telefono = new System.Windows.Forms.Panel();
             this.PanelLine_Apellido = new System.Windows.Forms.Panel();
             this.PanelLine_Nombre = new System.Windows.Forms.Panel();
-            this.LB_Apellido = new System.Windows.Forms.Label();
-            this.TB_Apellido = new System.Windows.Forms.TextBox();
             this.LB_Telefono = new System.Windows.Forms.Label();
             this.TB_Telefono = new System.Windows.Forms.TextBox();
             this.LB_Estatura = new System.Windows.Forms.Label();
@@ -59,6 +57,8 @@
             this.TB_Edad = new System.Windows.Forms.TextBox();
             this.LB_Name = new System.Windows.Forms.Label();
             this.TB_Nombre = new System.Windows.Forms.TextBox();
+            this.LB_Apellido = new System.Windows.Forms.Label();
+            this.TB_Apellido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.MainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PB_Female)).BeginInit();
@@ -117,10 +117,10 @@
             this.MainPanel.Controls.Add(this.TB_Estatura);
             this.MainPanel.Controls.Add(this.LB_Edad);
             this.MainPanel.Controls.Add(this.TB_Edad);
-            this.MainPanel.Controls.Add(this.LB_Name);
-            this.MainPanel.Controls.Add(this.TB_Nombre);
             this.MainPanel.Controls.Add(this.LB_Apellido);
             this.MainPanel.Controls.Add(this.TB_Apellido);
+            this.MainPanel.Controls.Add(this.LB_Name);
+            this.MainPanel.Controls.Add(this.TB_Nombre);
             this.MainPanel.Location = new System.Drawing.Point(40, 57);
             this.MainPanel.Name = "MainPanel";
             this.MainPanel.Size = new System.Drawing.Size(475, 618);
@@ -243,10 +243,12 @@
             // PB_Female
             // 
             this.PB_Female.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.PB_Female.Image = ((System.Drawing.Image)(resources.GetObject("PB_Female.Image")));
-            this.PB_Female.Location = new System.Drawing.Point(303, 471);
+            this.PB_Female.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_Female.Image = global::FORMULARIO_PA.Properties.Resources.femenine;
+            this.PB_Female.Location = new System.Drawing.Point(303, 464);
             this.PB_Female.Name = "PB_Female";
-            this.PB_Female.Size = new System.Drawing.Size(38, 37);
+            this.PB_Female.Padding = new System.Windows.Forms.Padding(5);
+            this.PB_Female.Size = new System.Drawing.Size(51, 50);
             this.PB_Female.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Female.TabIndex = 20;
             this.PB_Female.TabStop = false;
@@ -257,10 +259,12 @@
             // PB_Male
             // 
             this.PB_Male.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_Male.Image = ((System.Drawing.Image)(resources.GetObject("PB_Male.Image")));
-            this.PB_Male.Location = new System.Drawing.Point(223, 471);
+            this.PB_Male.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_Male.Image = global::FORMULARIO_PA.Properties.Resources.male;
+            this.PB_Male.Location = new System.Drawing.Point(216, 464);
             this.PB_Male.Name = "PB_Male";
-            this.PB_Male.Size = new System.Drawing.Size(34, 37);
+            this.PB_Male.Padding = new System.Windows.Forms.Padding(5);
+            this.PB_Male.Size = new System.Drawing.Size(51, 50);
             this.PB_Male.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PB_Male.TabIndex = 19;
             this.PB_Male.TabStop = false;
@@ -318,29 +322,6 @@
             this.PanelLine_Nombre.Name = "PanelLine_Nombre";
             this.PanelLine_Nombre.Size = new System.Drawing.Size(350, 3);
             this.PanelLine_Nombre.TabIndex = 2;
-            // 
-            // LB_Apellido
-            // 
-            this.LB_Apellido.AutoSize = true;
-            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.LB_Apellido.Location = new System.Drawing.Point(51, 201);
-            this.LB_Apellido.Name = "LB_Apellido";
-            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 262, 0);
-            this.LB_Apellido.Size = new System.Drawing.Size(380, 24);
-            this.LB_Apellido.TabIndex = 2;
-            this.LB_Apellido.Text = "Apellidos";
-            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
-            // 
-            // TB_Apellido
-            // 
-            this.TB_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TB_Apellido.Location = new System.Drawing.Point(55, 208);
-            this.TB_Apellido.Name = "TB_Apellido";
-            this.TB_Apellido.Size = new System.Drawing.Size(350, 13);
-            this.TB_Apellido.TabIndex = 3;
-            this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
-            this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
             // 
             // LB_Telefono
             // 
@@ -437,13 +418,36 @@
             this.TB_Nombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Nombre_KeyPress);
             this.TB_Nombre.Leave += new System.EventHandler(this.textBox1_Leave);
             // 
+            // LB_Apellido
+            // 
+            this.LB_Apellido.AutoSize = true;
+            this.LB_Apellido.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LB_Apellido.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.LB_Apellido.Location = new System.Drawing.Point(51, 201);
+            this.LB_Apellido.Name = "LB_Apellido";
+            this.LB_Apellido.Padding = new System.Windows.Forms.Padding(0, 0, 262, 0);
+            this.LB_Apellido.Size = new System.Drawing.Size(380, 24);
+            this.LB_Apellido.TabIndex = 2;
+            this.LB_Apellido.Text = "Apellidos";
+            this.LB_Apellido.Click += new System.EventHandler(this.LB_Apellido_Click);
+            // 
+            // TB_Apellido
+            // 
+            this.TB_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TB_Apellido.Location = new System.Drawing.Point(55, 208);
+            this.TB_Apellido.Name = "TB_Apellido";
+            this.TB_Apellido.Size = new System.Drawing.Size(350, 13);
+            this.TB_Apellido.TabIndex = 3;
+            this.TB_Apellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TB_Apellido_KeyPress);
+            this.TB_Apellido.Leave += new System.EventHandler(this.TB_Apellido_Leave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(552, 718);
+            this.ClientSize = new System.Drawing.Size(557, 718);
             this.Controls.Add(this.MainPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);

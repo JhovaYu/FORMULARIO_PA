@@ -24,35 +24,13 @@ namespace FORMULARIO_PA
         public int  Edad, Estatura;
 
         public Boolean isClose, Genero;
-
-        private bool _actualizandoTexto = false;
-
-        private ConexionBD conexion;
-
-        HashSet<char> valoresPermitidos = new HashSet<char>
-{
-    '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'
-};
-
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-            (
-            int nLeftRect,     
-            int nTopRect,      
-            int nRightRect,    
-            int nBottomRect,   
-            int nWidthEllipse, 
-            int nHeightEllipse 
-        );
+        
         public Form1()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+            PanelRedondo.ConfigurarFormulario(this);
 
             PI = new PanelInformation(this);
-
-            conexion = new ConexionBD();
         }
 
         private void PanelInformation_ValorChanged(object sender, EventArgs e)
@@ -106,59 +84,28 @@ namespace FORMULARIO_PA
 
         private void textBox1_Leave(object sender, EventArgs e)
         {
-            if(TB_Nombre.Text == "" )
-            {
-                Funciones.AjustarLabelFormUp(LB_Name, new Point(51, 140));
-            }
-
-            Nombre = TB_Nombre.Text;
+            Funciones.RegresarEstadoOriginal(TB_Nombre, LB_Name, value => Nombre = value, new Point(51, 140));
             
         }
 
         private void TB_Apellido_Leave(object sender, EventArgs e)
         {
-            if (TB_Apellido.Text == "")
-            {
-                Funciones.AjustarLabelFormUp(LB_Apellido, new Point(51, 201));
-            }
-            Apellido = TB_Apellido.Text;
+            Funciones.RegresarEstadoOriginal(TB_Apellido, LB_Apellido, value =>  Apellido = value, new Point(51, 201));
         }
 
-            private void TB_Telefono_Leave(object sender, EventArgs e)
-            {
-                if (TB_Telefono.Text == "")
-                {
-                    Funciones.AjustarLabelFormUp(LB_Telefono, new Point(51, 267));
-                }
-                
-                {
-                    Telefono = (TB_Telefono.Text);
-                }
-
+        private void TB_Telefono_Leave(object sender, EventArgs e)
+        {
+            Funciones.RegresarEstadoOriginal(TB_Telefono, LB_Telefono, value => Telefono = value, new Point(51, 267));
         }
 
         private void TB_Edad_Leave(object sender, EventArgs e)
         {
-            if (TB_Edad.Text == "")
-            {
-                Funciones.AjustarLabelFormUp(LB_Edad, new Point(51, 327));
-            }
-            if (TB_Edad.Text != "")
-            {
-                Edad = int.Parse(TB_Edad.Text);
-            }
+            Funciones.RegresarEstadoOriginal(TB_Edad, LB_Edad, value => Edad = int.Parse(value), new Point(51, 327));
         }
 
         private void TB_Estatura_Leave(object sender, EventArgs e)
         {
-            if (TB_Estatura.Text == "")
-            {
-                Funciones.AjustarLabelFormUp(LB_Estatura, new Point(51, 396));
-            }
-            if (TB_Estatura.Text != "")
-            {
-                Estatura = int.Parse(TB_Estatura.Text);
-            }
+            Funciones.RegresarEstadoOriginal(TB_Estatura, LB_Estatura, value => Estatura = int.Parse(value), new Point(51, 396));
         }
 
         public void BTN_Cancelar_Click(object sender, EventArgs e)
@@ -169,15 +116,16 @@ namespace FORMULARIO_PA
             ReordenarFormulario();
         }
 
-        private void PB_Male_Click(object sender, EventArgs e)
+        private async void PB_Male_Click(object sender, EventArgs e)
         {
             Genero = true;
+            await ImageManager.CambiarImagen(this, PB_Male, true, Properties.Resources.male_shadow, Properties.Resources.male);
         }
 
-        private void PB_Female_Click(object sender, EventArgs e)
+        private async void PB_Female_Click(object sender, EventArgs e)
         {
             Genero = false;
-            //PB_Female.Image("C:\Users\alfom\Pictures\Formulario_PNG\femenine_grey.png");
+            await ImageManager.CambiarImagen(this, PB_Female, true, Properties.Resources.femenine_shadow, Properties.Resources.femenine);
         }
 
         private void TB_Estatura_KeyPress(object sender, KeyPressEventArgs KeyPressEvent)
@@ -197,23 +145,22 @@ namespace FORMULARIO_PA
 
         private void PB_Male_MouseEnter(object sender, EventArgs e)
         {
-            PB_Male.Size = new Size(54, 51);
-
+            PB_Male.Padding = new Padding(0, 0, 0, 0);
         }
 
         private void PB_Male_MouseLeave(object sender, EventArgs e)
         {
-            PB_Male.Size = new Size(43, 43);
+            PB_Male.Padding = new Padding( 5, 5, 5, 5);
         }
 
         private void PB_Female_MouseEnter(object sender, EventArgs e)
         {
-            PB_Female.Size = new Size(54, 51);
+            PB_Female.Padding = new Padding(0, 0, 0, 0);
         }
 
         private void PB_Female_MouseLeave(object sender, EventArgs e)
         {
-            PB_Female.Size = new Size(46, 46);
+            PB_Female.Padding = new Padding(5, 5, 5, 5);
         }
 
         private void LB_AdvertenciaNombre_Click(object sender, EventArgs e)
